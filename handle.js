@@ -1,6 +1,14 @@
+//Check if Handlebars and jQuery are linked
+if (typeof Handlebars === "undefined") {
+	throw "Handle JS relies on Handlebars. Please make sure to link that.";
+} else if (typeof jQuery === "undefined") {
+	throw "Handle JS relies on jQuery. Please make sure to link to that.";
+}
+
 var HANDLE = {};
 
 HANDLE.renderTemplate = function(settings) {
+	//Make sure required settings are present
 	if (!settings.templateSource) {
 		throw "Please provide a source for your template";
 	} else if (!settings.data) {
