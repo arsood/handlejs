@@ -19,13 +19,13 @@ HANDLE.renderTemplate = function(settings) {
 
 	var $where = $(settings.where);
 
-	if (settings.clearOriginal) {
-		$where.html("");
-	}
-
 	var source = $(settings.templateSource).html();
 
 	var template = Handlebars.compile(source);
+
+	if (settings.clearOriginal) {
+		$where.html("");
+	}
 
 	if (typeof data === "string") {
 		var jsonData = JSON.parse(settings.data);
